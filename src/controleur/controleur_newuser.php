@@ -3,7 +3,7 @@
 
 function actionNewuser($twig, $db){
  $form = array();
- $utilisateur = new Utilisateur($db);
+ $newuser = new Newuser($db);
  if (isset($_POST['btAjouter'])){
   
       $inputNom = $_POST['inputNom'];
@@ -12,7 +12,7 @@ function actionNewuser($twig, $db){
       $inputCp = $_POST['inputCp'];
       $inputVille = $_POST['inputVille'];
       
-       $exec = $utilisateur->insert($inputNom,$inputPrenom,$inputAdresse, $inputCp, $inputVille);
+       $exec = $newuser->insert($inputNom,$inputPrenom,$inputAdresse, $inputCp, $inputVille);
  if (!$exec){
  $form['valide'] = false;
  $form['message'] = 'Problème d\'insertion dans la table utilisateur ';
@@ -21,7 +21,7 @@ function actionNewuser($twig, $db){
  
     }
  
- $liste = $utilisateur->select();
+ $liste = $newuser->select();
  echo $twig->render('newuser.html.twig', array('form'=>$form,'liste'=>$liste));
 }
 ?>

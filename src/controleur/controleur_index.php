@@ -2,8 +2,8 @@
 
 function actionAccueil($twig, $db){
      $form = array();
- $utilisateur = new Utilisateur($db);
- $liste = $utilisateur->select();
+ $newuser = new Newuser($db);
+ $liste = $newuser->select();
     echo $twig->render('index.html.twig', array('form'=>$form,'liste'=>$liste));
 }
 
@@ -35,6 +35,8 @@ function actionInscrire($twig){
 function actionMentions($twig){
     echo $twig->render('mentions.html.twig', array());
 }
+
+
 
 function actionApropos($twig){
     echo $twig->render('apropos.html.twig', array());

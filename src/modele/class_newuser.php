@@ -1,5 +1,5 @@
 <?php
-class Utilisateur{
+class Newuser{
 
  private $db;
  private $insert;
@@ -10,8 +10,8 @@ class Utilisateur{
  public function __construct($db){
  $this->db = $db;
  $this->insert = $db->prepare("insert into utilisateur(nom, prenom, adresse, cp, ville) values(:Nom, :Prenom, :Adresse, :Cp, :Ville)");
- $this->select = $db->prepare("select nom, prenom, adresse, cp, ville from utilisateur order by nom");
- //$this->updateMdp = %db->prepare("insert into utilisateur(mdp, confmdp,) values(:mdp, :confmdp)");
+ $this->select = $db->prepare("select id, nom, prenom, adresse, cp, ville from utilisateur order by nom");
+
  }
  public function insert($inputNom, $inputPrenom, $inputAdresse, $inputCp ,$inputVille){
  $r = true;

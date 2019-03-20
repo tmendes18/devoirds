@@ -5,7 +5,28 @@
 {% block contenu %} <h1> Tronche Book </h1> 
 
 <br/>
+<div class="panel panel-default">
+
+ <!-- Default panel contents -->
+ <div class="panel-heading ">actualité</div>
+ <!-- Table -->
+ <div class="table-responsive">
+ <table class="table table-hover table-striped ">
+ <tr  ><th>Titre</th></tr>
  
+ {% for a in liste %}
+     
+ <tr ><td >{{a.titre}}</td></tr>
+
+  {% endfor %} 
+  
+ 
+ 
+ </table>
+ </div>
+</div>
+    
+
 <div class="panel panel-default">
 
  <!-- Default panel contents -->

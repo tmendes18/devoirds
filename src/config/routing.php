@@ -6,7 +6,7 @@ $lesPages['accueil'] = "actionAccueil";
 $lesPages['mentions'] = "actionMentions";
 $lesPages['maintenance'] = "actionMaintenance";
 $lesPages['newuser'] = "actionNewuser";
-
+$lesPages['actualite'] = "actionActualite";
 
 if ($db!=null){
   if(isset($_GET['page'])){
