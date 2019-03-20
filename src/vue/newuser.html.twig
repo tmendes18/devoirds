@@ -1,0 +1,53 @@
+{% extends "base.html.twig" %}
+
+{% block title %} {{ parent() }} - New User {% endblock %}
+       
+{% block contenu %} 
+    <h1>New User </h1> 
+
+    {% if form.valide is defined %}
+ {% if form.valide == true %}
+ <h1  class="h3 mb-3 font-weight-normal">Inscription réussie</h1>
+ <h1 class="h3 mb-3 font-weight-normal">Voici votre identifiant : {{form.nom}} {{form.prenom}}</h1>
+
+ {% else %}
+ <h1 id="title" class="h3 mb-3 font-weight-normal">Echec de l'inscription</h1>
+ <h1 class="h3 mb-3 font-weight-normal">Erreur : {{form.message}}</h1>
+ <h1 class="h3 mb-3 font-weight-normal"><a href="index.php?page=newuser">Retourner sur
+la page d'inscription</a></h1>
+ {% endif %} 
+
+{% else %}
+
+     
+ <form class="style-signin" action="index.php?page=newuser" method="post" enctype="application/x-www-form-urlencoded">
+ 
+ <br/>
+
+    <label for="inputNom" class="sr-only">Nom:</label>
+    <input type="text"  id="inputEmail" name="inputNom" class="form-control" placeholder="Nom" required autofocus>
+
+    <label for="inputPrenom" class="sr-only">Prenom:</label>
+    <input type="text"  id="inputPassword" name="inputPrenom" class="form-control " placeholder="Prénom" required autofocus>
+
+    <label for="inputAdresse" class="sr-only">Adresse:</label>
+    <input type="text"  id="inputPassword2" name="inputAdresse" class="form-control " placeholder="Adresse" required autofocus>
+                              					
+    <label for="inputCp" class="sr-only">Cp:</label>
+    <input type="text"  id="nom" name="inputCp" class="form-control " placeholder="Cp" required autofocus>
+
+    <label for="inputVille" class="sr-only">Ville:</label>
+    <input type="text"  id="prenom" name="inputVille" class="form-control " placeholder="Ville" required autofocus>
+
+ <br/>
+
+          
+<button class="btn btn-lg btn-success btn-block" type="submit" name="btAjouter">Ajouter</button>
+
+          
+
+</form>
+
+{% endif %} 
+    
+{% endblock %} 
