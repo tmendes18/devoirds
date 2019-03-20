@@ -8,13 +8,13 @@
     {% if form.valide is defined %}
  {% if form.valide == true %}
  <h1  class="h3 mb-3 font-weight-normal">Inscription réussie</h1>
- <h1 class="h3 mb-3 font-weight-normal">Voici votre identifiant : {{form.nom}} {{form.prenom}}</h1>
+
 
  {% else %}
  <h1 id="title" class="h3 mb-3 font-weight-normal">Echec de l'inscription</h1>
  <h1 class="h3 mb-3 font-weight-normal">Erreur : {{form.message}}</h1>
  <h1 class="h3 mb-3 font-weight-normal"><a href="index.php?page=newuser">Retourner sur
-la page d'inscription</a></h1>
+la page d'ajout d'utilisateur</a></h1>
  {% endif %} 
 
 {% else %}

@@ -3,8 +3,10 @@
 function actionAccueil($twig, $db){
      $form = array();
  $newuser = new Newuser($db);
+  $actualite = new Actualite($db);
  $liste = $newuser->select();
-    echo $twig->render('index.html.twig', array('form'=>$form,'liste'=>$liste));
+  $listeactu = $actualite->select();
+    echo $twig->render('index.html.twig', array('form'=>$form,'liste'=>$liste,'listeactu'=>$listeactu));
 }
 
 function actionConnexion($twig){

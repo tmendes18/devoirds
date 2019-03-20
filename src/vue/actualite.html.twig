@@ -3,6 +3,19 @@
 {% block title %} {{ parent() }} - Actualité {% endblock %}
        
 {% block contenu %}
+     {% if form.valide is defined %}
+ {% if form.valide == true %}
+ <h1  class="h3 mb-3 font-weight-normal">New Actualité réussie</h1>
+ 
+
+ {% else %}
+ <h1 id="title" class="h3 mb-3 font-weight-normal">Echec de la New Actualité</h1>
+ <h1 class="h3 mb-3 font-weight-normal">Erreur : {{form.message}}</h1>
+ <h1 class="h3 mb-3 font-weight-normal"><a href="index.php?page=actualite">Retourner sur
+la page d'ajout d'actualité</a></h1>
+ {% endif %} 
+
+{% else %}
     <h1>Les Actualités des Utilisateurs</h1> 
     
     <form class="style-signin" action="index.php?page=actualite" method="post" enctype="application/x-www-form-urlencoded">
@@ -30,5 +43,5 @@
           
 
 </form>
-    
+     {% endif %} 
 {% endblock %} 
